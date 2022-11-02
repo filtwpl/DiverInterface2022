@@ -21,7 +21,7 @@ public class UnderwaterWarning : MonoBehaviour
     void Update()
     {
         float currDepth = im.GetDepth();
-        Debug.Log("The current depth is " + currDepth.ToString());
+        // Debug.Log("The current depth is " + currDepth.ToString());
         if (currDepth < 0f)
         {
             prevState = isUnderwater;
@@ -34,7 +34,7 @@ public class UnderwaterWarning : MonoBehaviour
 
         if (!prevState && isUnderwater && audioFinished)
         {
-            Debug.Log("I am underwater. Playing audio.");
+            Debug.Log("I am underwater. Let's try to play the audio!");
             StartCoroutine(AudioCompletion());
         }
     }
